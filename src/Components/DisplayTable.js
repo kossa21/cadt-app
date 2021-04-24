@@ -2,7 +2,7 @@ import React from "react";
 import { Table } from "reactstrap";
 import { listGroups } from "../informationTable";
 
-export const DisplayTable = ({ tableToDisplay }) => {
+export const DisplayTable = ({ tableToDisplay, data }) => {
   return (
     <div>
       <Table responsive hover>
@@ -14,13 +14,13 @@ export const DisplayTable = ({ tableToDisplay }) => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
+          {data.map((rowItem) => (
+            <tr>
+              {listGroups[tableToDisplay].map((cellItem) => (
+                <td>{rowItem[cellItem.dbName]}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </Table>
     </div>

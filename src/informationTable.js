@@ -3,14 +3,14 @@ export const listGroups = {
     { dbName: "name", fieldName: "Name" },
     { dbName: "courses", fieldName: "Courses" },
     { dbName: "wales", fieldName: "Wales" },
-    { dbName: "update", fieldName: "Last Update" },
+    { dbName: "updated", fieldName: "Last Update" },
     { dbName: "user_id_last_update", fieldName: "By" },
   ],
-  setOut: [
+  setout: [
     { dbName: "name", fieldName: "Name" },
     { dbName: "machine_name", fieldName: "Machine Name" },
-    { dbName: "machine_width", fieldName: "MAchine Width" },
+    { dbName: "machine_width", fieldName: "Machine Width" },
     { dbName: "courses", fieldName: "Courses" },
-    { dbName: "update", fieldName: "Update" },
+    { dbName: "updated", fieldName: "Update" },
   ],
 };

@@ -6,6 +6,7 @@ import { useState } from "react";
 function App() {
   const [tableItems, settableItems] = useState([]);
   const [tableToDisplay, setTableToDisplay] = useState("designs");
+
   const savingDataFromFetch = async () => {
     const data = await fetcherListData("designs");
     settableItems(data);
@@ -13,7 +14,8 @@ function App() {
 
   return (
     <div className="App">
-      <DisplayTable tableToDisplay={tableToDisplay} />
+      <DisplayTable tableToDisplay={tableToDisplay} data={tableItems} />
+      <button onClick={savingDataFromFetch}>click Me</button>
     </div>
   );
 }
