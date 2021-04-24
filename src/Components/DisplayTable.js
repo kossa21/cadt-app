@@ -1,17 +1,16 @@
 import React from "react";
 import { Table } from "reactstrap";
+import { listGroups } from "../informationTable";
 
-export const DisplayTable = () => {
+export const DisplayTable = ({ tableToDisplay }) => {
   return (
     <div>
       <Table responsive hover>
         <thead>
           <tr>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
-            <th>Table heading</th>
+            {listGroups[tableToDisplay].map((tableTitle) => (
+              <th>{tableTitle.fieldName}</th>
+            ))}
           </tr>
         </thead>
         <tbody>

@@ -1,4 +1,5 @@
-export const fetcherListData = async () => {
-  const data = await (await fetch("http://localhost:5000/designs")).json();
+export const fetcherListData = async (route) => {
+  const path = `http://localhost:5000/${route}`;
+  const data = await (await fetch(path)).json();
   return data;
 };

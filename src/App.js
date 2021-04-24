@@ -5,15 +5,15 @@ import { useState } from "react";
 
 function App() {
   const [tableItems, settableItems] = useState([]);
-
+  const [tableToDisplay, setTableToDisplay] = useState("designs");
   const savingDataFromFetch = async () => {
-    const data = await fetcherListData();
+    const data = await fetcherListData("designs");
+    settableItems(data);
   };
 
-  console.log(tableItems);
   return (
     <div className="App">
-      <DisplayTable />
+      <DisplayTable tableToDisplay={tableToDisplay} />
     </div>
   );
 }
