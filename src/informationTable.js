@@ -6,7 +6,7 @@ export const listGroups = {
     { dbName: "updated", fieldName: "Last Update" },
     { dbName: "user_id_last_update", fieldName: "By" },
   ],
-  setout: [
+  setouts: [
     { dbName: "name", fieldName: "Name" },
     { dbName: "machine_name", fieldName: "Machine Name" },
     { dbName: "machine_width", fieldName: "Machine Width" },

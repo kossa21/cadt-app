@@ -5,17 +5,22 @@ import { useState } from "react";
 
 function App() {
   const [tableItems, settableItems] = useState([]);
-  const [tableToDisplay, setTableToDisplay] = useState("designs");
+  const [tableToDisplay, setTableToDisplay] = useState("");
 
-  const savingDataFromFetch = async () => {
-    const data = await fetcherListData("designs");
+  const savingDataFromFetch = async (e) => {
+    setTableToDisplay(e.target.innerHTML);
+    const data = await fetcherListData(tableToDisplay);
     settableItems(data);
+    /* setTableToDisplay(e.innerHTML); */
   };
 
   return (
     <div className="App">
-      <DisplayTable tableToDisplay={tableToDisplay} data={tableItems} />
-      <button onClick={savingDataFromFetch}>click Me</button>
+      {tableToDisplay ? (
+        <DisplayTable tableToDisplay={tableToDisplay} data={tableItems} />
+      ) : null}
+      <button onClick={savingDataFromFetch}>designs</button>
+      <button onClick={savingDataFromFetch}>setouts</button>
     </div>
   );
 }
