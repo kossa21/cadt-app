@@ -3,3 +3,41 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.App {
+  display: flex;
+  justify-content: space-around;
+}
+
+nav {
+  background-color: #28d6c6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 20vw;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+nav a {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 1.25rem 0;
+}
+
+nav a:first-child {
+  margin-top: 5rem;
+}

@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "reactstrap";
 import { listGroups } from "../informationTable";
+import { Link } from "react-router-dom";
+import { fetcherListData } from "../API";
+import "./DisplayTable.css";
 
 export const DisplayTable = ({ tableToDisplay, data }) => {
   return (
-    <div>
+    <div className="table__container">
       <Table responsive hover>
         <thead>
           <tr>
@@ -14,7 +17,7 @@ export const DisplayTable = ({ tableToDisplay, data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((rowItem) => (
+          {data?.map((rowItem) => (
             <tr>
               {listGroups[tableToDisplay].map((cellItem) => (
                 <td>{rowItem[cellItem.dbName]}</td>
