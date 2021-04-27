@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Table } from "reactstrap";
 import { listGroups } from "../informationTable";
-import { Link } from "react-router-dom";
-import { fetcherListData } from "../API";
 import "./DisplayTable.css";
 
 export const DisplayTable = ({ tableToDisplay, data }) => {
@@ -11,16 +9,24 @@ export const DisplayTable = ({ tableToDisplay, data }) => {
       <Table responsive hover>
         <thead>
           <tr>
-            {listGroups[tableToDisplay].map((tableTitle) => (
-              <th>{tableTitle.fieldName}</th>
+            {listGroups[tableToDisplay].map((tableTitle, index) => (
+              <th key={index}>{tableTitle.fieldName}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {data?.map((rowItem) => (
-            <tr>
-              {listGroups[tableToDisplay].map((cellItem) => (
-                <td>{rowItem[cellItem.dbName]}</td>
+          {data?.map((rowItem, index) => (
+            <tr key={index}>
+              {listGroups[tableToDisplay].map((cellItem, index) => (
+                <td key={index}>
+                  {cellItem.dbName === "user_id_last_update" ? (
+                    <div className="user-initials">
+                      {rowItem[cellItem.dbName]}
+                    </div>
+                  ) : (
+                    rowItem[cellItem.dbName]
+                  )}
+                </td>
               ))}
             </tr>
           ))}

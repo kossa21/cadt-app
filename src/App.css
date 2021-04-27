@@ -50,6 +50,18 @@ a:active {
   background-color: black;
   width: 100%;
   color: white;
+.user-initials {
+  background-color: #69c5b8;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  font-size: small;
+}
   text-align: center;
   padding: 1.25rem 0;
 }
