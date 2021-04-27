@@ -50,6 +50,8 @@ a:active {
   background-color: black;
   width: 100%;
   color: white;
+}
+
 .user-initials {
   background-color: #69c5b8;
   height: 30px;
@@ -62,8 +64,10 @@ a:active {
   font-weight: bold;
   font-size: small;
 }
+
+.nav-item {
+  margin: 1rem 0;
   text-align: center;
-  padding: 1.25rem 0;
 }
 
 .navbar {
@@ -84,5 +88,8 @@ a:active {
     top: 0;
     justify-content: flex-end;
   }
+
+  table {
+    margin-top: 150px;
   }
 }
